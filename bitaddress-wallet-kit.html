@@ -10766,12 +10766,12 @@
 			#paperarea .keyarea .note .pubaddressprefix { display: none; }
 
 			#paperarea .keyarea .note .qrcode_public {
-				position: absolute; left: 0.25in; top: 0.185in;
+				position: absolute; left: 0.25in; top: 1.3;
 				border: 0; padding: 0.08in; margin: 0;
 				width: 0.84in; height: 0.84in;
 			}
 			#paperarea .keyarea .note .qrcode_private {
-				position: absolute; right: 2.0in; top: 1.3in;
+				position: absolute; right: 2.0in; top: 0.185in;
 				border: 0; padding: 0.08in; margin: 0;
 				width: 0.84in; height: 0.84in;
 				display: block;
@@ -12170,17 +12170,17 @@
 					// Qr Code - Public
 					var qr_code = ninja.qrCode.createCanvas(bitcoinAddress);
 					var qrcode_pubaddr = qr_code.toDataURL('image/jpeg');
-					doc.addImage(qrcode_pubaddr, 'JPEG', pageMargin+0.25+0.08, pageMargin+0.185+heightOffset+0.1, 0.8, 0.8); //Print
+					doc.addImage(qrcode_pubaddr, 'JPEG', pageMargin+0.14, pageMargin+0.185+heightOffset+1.37, 0.8, 0.8); //Print
 
 					// Qr Code - Private
 					var qr_code = ninja.qrCode.createCanvas(privateKey);
 					var qrcode_priv = qr_code.toDataURL('image/jpeg');
-					doc.addImage(qrcode_priv, 'JPEG', pageMaxWidth-pageMargin-2-0.94+0.1, pageMargin+1.3+heightOffset+0.1, 0.8, 0.8); //Print
+					doc.addImage(qrcode_priv, 'JPEG', pageMaxWidth-pageMargin-2-0.62, pageMargin+heightOffset+0.17, 0.8, 0.8); //Print
 
 					// Pub Address
 					if(opw.paperwallet.show_alias) var text = alias_full+ ": "+bitcoinAddress;
 					else var text = bitcoinAddress;
-					doc.text(pageMargin+1.45+0.05, pageMargin+0.185+heightOffset+0.13, text); // Print
+					doc.text(pageMargin+1.02+0.05, pageMargin+2.2+heightOffset+0.13, text); // Print
 						
 					// Stub
 					// Qr Code Public
